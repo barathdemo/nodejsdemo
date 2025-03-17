@@ -1,17 +1,10 @@
 pipeline {
     agent any 
-    stages {
-        stage('Docker Build') { 
-            steps {
-                echo "This is Build stage."
-                sh "docker build -t barath2707/docker:$BUILD_NUMBER ."
-                echo "Printing Job URL : $JOB_URL"
-            }
-        }
+    stages {     
         stage('Docker push') { 
             steps {
                 echo "This is docker push stage."
-                sh "docker push barath2707/docker:$BUILD_NUMBER"
+                echo "this is dev pipeline"
             }
         }
     }
